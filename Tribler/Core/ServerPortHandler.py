@@ -71,9 +71,9 @@ class SingleRawServer(object):
 # pass    # don't call with this
 
     def start_listening(self, handler):
-        self.handler = handler    # Encoder
+        self.handler = handler  # Encoder
         self.running = True
-        return self.shutdown    # obviously, doesn't listen forever
+        return self.shutdown  # obviously, doesn't listen forever
 
     def is_finished(self):
         return self.finished
@@ -82,9 +82,9 @@ class SingleRawServer(object):
         return self.rawserver.get_exception_flag()
 
 
-class NewSocketHandler(object):     # hand a new socket off where it belongs
+class NewSocketHandler(object):  # hand a new socket off where it belongs
 
-    def __init__(self, multihandler, connection):    # connection: SingleSocket
+    def __init__(self, multihandler, connection):  # connection: SingleSocket
         self._logger = logging.getLogger(self.__class__.__name__)
 
         self.multihandler = multihandler
@@ -161,7 +161,7 @@ class NewSocketHandler(object):     # hand a new socket off where it belongs
                 self._logger.debug("NewSocketHandler: %s returned None", self.next_func)
                 self.close()
                 return
-            if x == True:       # ready to process
+            if x == True:  # ready to process
                 if self.protocol == 'HTTP' and self.multihandler.httphandler:
                     self._logger.debug("NewSocketHandler: Reporting HTTP connection")
                     self.multihandler.httphandler.external_connection_made(self.connection)

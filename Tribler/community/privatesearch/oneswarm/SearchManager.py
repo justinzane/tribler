@@ -110,7 +110,7 @@ class SearchManager:
                 for result in results:
                     task = DelayedSearchResponse(msg, result, self, self.community)
                     delay = self.getSearchDelayForInfohash(source.getRemoteFriend())
-                    reactor.callFromThread(reactor.callLater, delay/1000.0, task.run)
+                    reactor.callFromThread(reactor.callLater, delay / 1000.0, task.run)
             else:
                 shouldForward = False
         return shouldForward

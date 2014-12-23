@@ -1399,7 +1399,7 @@ class ListBody(AbstractListBody, scrolled.ScrolledPanel):
             self.processingMousewheel = True
             if self.IsShownOnScreen() and self.GetScreenRect().Contains(wx.GetMousePosition()):
                 if sys.platform == 'darwin':
-                    self.Scroll(-1, self.GetViewStart()[1]-event.WheelRotation)
+                    self.Scroll(-1, self.GetViewStart()[1] - event.WheelRotation)
                 else:
                     self.GetEventHandler().ProcessEvent(event)
                 self.processingMousewheel = False

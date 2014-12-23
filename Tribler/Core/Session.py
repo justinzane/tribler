@@ -410,7 +410,7 @@ class Session(SessionConfigInterface):
             raise OperationNotEnabledByConfigurationException()
 
         # Called by any thread
-        #with self.sesslock:
+        # with self.sesslock:
         if subject == NTFY_MISC:
             return self.lm.misc_db
         elif subject == NTFY_METADATA:

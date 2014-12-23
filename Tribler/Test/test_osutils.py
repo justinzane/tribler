@@ -25,15 +25,15 @@ class Test_OsUtils(unittest.TestCase):
           ' ': default_name,
           '   ': default_name,
           os.path.join('a', 'b'): 'a_b',
-          '\x5c\x61': '_a',    # \x5c = '\\'
+          '\x5c\x61': '_a',  # \x5c = '\\'
           '\x92\x97': '\x92\x97',
           '\x5c\x5c': '__',
           '\x5c\x61\x5c': '_a_',
-          '\x2f\x61': '_a',    # \x2f = '/'
+          '\x2f\x61': '_a',  # \x2f = '/'
           '\x92\x97': '\x92\x97',
           '\x2f\x2f': '__',
           '\x2f\x61\x2f': '_a_',
-          'a' * 300: 'a'*255
+          'a' * 300: 'a' * 255
         }
         for c in '"*/:<>?\\|':
             win_name_table[c] = default_name
@@ -46,11 +46,11 @@ class Test_OsUtils(unittest.TestCase):
           ' ': default_name,
           '   ': default_name,
           os.path.join('a', 'b'): 'a_b',
-          '\x2f\x61': '_a',    # \x2f = '/'
+          '\x2f\x61': '_a',  # \x2f = '/'
           '\x92\x97': '\x92\x97',
           '\x2f\x2f': '__',
           '\x2f\x61\x2f': '_a_',
-          'a' * 300: 'a'*255
+          'a' * 300: 'a' * 255
         }
 
         if sys.platform.startswith('win'):

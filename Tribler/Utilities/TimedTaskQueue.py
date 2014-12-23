@@ -38,7 +38,7 @@ class TimedTaskQueue(object):
 
     def shutdown(self, immediately=False):
         self.add_task("stop", -time() if immediately else 0)
-        self.add_task = lambda task, t=0, id=None: None
+        self.add_task = lambda task, t = 0, id = None: None
 
     def add_task(self, task, t=0, id=None):
         """ t parameter is now usable, unlike before.

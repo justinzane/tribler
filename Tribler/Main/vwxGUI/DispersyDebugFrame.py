@@ -296,7 +296,7 @@ class CommunityPanel(wx.Panel):
         self.__detail_panel.UpdateInfo(community_data)
 
     def UpdateInfo(self, stats):
-        community_list = sorted(stats.communities,  key=lambda community:
+        community_list = sorted(stats.communities, key=lambda community:
                                 (not community.dispersy_enable_candidate_walker,
                                  community.classification, community.cid))
         self.__community_data_list = []

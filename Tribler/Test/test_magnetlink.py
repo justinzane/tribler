@@ -293,7 +293,7 @@ class TestMetadataFakePeer(TestAsServer, MagnetHelpers):
             self.seeder_setup_complete.set()
 
         d = ds.get_download()
-        print >> sys.stderr, "test: seeder:", repr(d.get_def().get_name()), dlstatus_strings[ds.get_status()],\
+        print >> sys.stderr, "test: seeder:", repr(d.get_def().get_name()), dlstatus_strings[ds.get_status()], \
             ds.get_progress()
         return 1.0, False
 
@@ -331,7 +331,7 @@ class TestMetadataFakePeer(TestAsServer, MagnetHelpers):
 
     def test_bad_request(self):
         self.bad_request_and_disconnect({"msg_type": 0, "piece": len(self.metadata_list)})
-        self.bad_request_and_disconnect({"msg_type": 0, "piece": -1})
+        self.bad_request_and_disconnect({"msg_type": 0, "piece":-1})
         self.bad_request_and_disconnect({"msg_type": 0, "piece": "1"})
         self.bad_request_and_disconnect({"msg_type": 0, "piece": [1, 2]})
         self.bad_request_and_disconnect({"msg_type": 0, "PIECE": 1})

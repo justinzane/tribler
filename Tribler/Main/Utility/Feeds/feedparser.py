@@ -1912,7 +1912,7 @@ class _BaseHTMLProcessor(sgmllib.SGMLParser):
     def parse_starttag(self, i):
         j = sgmllib.SGMLParser.parse_starttag(self, i)
         if self._type == 'application/xhtml+xml':
-            if j > 2 and self.rawdata[j-2:j] == '/>':
+            if j > 2 and self.rawdata[j - 2:j] == '/>':
                 self.unknown_endtag(self.lasttag)
         return j
 
@@ -3280,25 +3280,25 @@ registerDateHandler(_parse_date_mssql)
 # Unicode strings for Greek date strings
 _greek_months = \
   {
-   u'\u0399\u03b1\u03bd': u'Jan',       # c9e1ed in iso-8859-7
-   u'\u03a6\u03b5\u03b2': u'Feb',       # d6e5e2 in iso-8859-7
-   u'\u039c\u03ac\u03ce': u'Mar',       # ccdcfe in iso-8859-7
-   u'\u039c\u03b1\u03ce': u'Mar',       # cce1fe in iso-8859-7
-   u'\u0391\u03c0\u03c1': u'Apr',       # c1f0f1 in iso-8859-7
-   u'\u039c\u03ac\u03b9': u'May',       # ccdce9 in iso-8859-7
-   u'\u039c\u03b1\u03ca': u'May',       # cce1fa in iso-8859-7
-   u'\u039c\u03b1\u03b9': u'May',       # cce1e9 in iso-8859-7
+   u'\u0399\u03b1\u03bd': u'Jan',  # c9e1ed in iso-8859-7
+   u'\u03a6\u03b5\u03b2': u'Feb',  # d6e5e2 in iso-8859-7
+   u'\u039c\u03ac\u03ce': u'Mar',  # ccdcfe in iso-8859-7
+   u'\u039c\u03b1\u03ce': u'Mar',  # cce1fe in iso-8859-7
+   u'\u0391\u03c0\u03c1': u'Apr',  # c1f0f1 in iso-8859-7
+   u'\u039c\u03ac\u03b9': u'May',  # ccdce9 in iso-8859-7
+   u'\u039c\u03b1\u03ca': u'May',  # cce1fa in iso-8859-7
+   u'\u039c\u03b1\u03b9': u'May',  # cce1e9 in iso-8859-7
    u'\u0399\u03bf\u03cd\u03bd': u'Jun',  # c9effded in iso-8859-7
-   u'\u0399\u03bf\u03bd': u'Jun',       # c9efed in iso-8859-7
+   u'\u0399\u03bf\u03bd': u'Jun',  # c9efed in iso-8859-7
    u'\u0399\u03bf\u03cd\u03bb': u'Jul',  # c9effdeb in iso-8859-7
-   u'\u0399\u03bf\u03bb': u'Jul',       # c9f9eb in iso-8859-7
-   u'\u0391\u03cd\u03b3': u'Aug',       # c1fde3 in iso-8859-7
-   u'\u0391\u03c5\u03b3': u'Aug',       # c1f5e3 in iso-8859-7
-   u'\u03a3\u03b5\u03c0': u'Sep',       # d3e5f0 in iso-8859-7
-   u'\u039f\u03ba\u03c4': u'Oct',       # cfeaf4 in iso-8859-7
-   u'\u039d\u03bf\u03ad': u'Nov',       # cdefdd in iso-8859-7
-   u'\u039d\u03bf\u03b5': u'Nov',       # cdefe5 in iso-8859-7
-   u'\u0394\u03b5\u03ba': u'Dec',       # c4e5ea in iso-8859-7
+   u'\u0399\u03bf\u03bb': u'Jul',  # c9f9eb in iso-8859-7
+   u'\u0391\u03cd\u03b3': u'Aug',  # c1fde3 in iso-8859-7
+   u'\u0391\u03c5\u03b3': u'Aug',  # c1f5e3 in iso-8859-7
+   u'\u03a3\u03b5\u03c0': u'Sep',  # d3e5f0 in iso-8859-7
+   u'\u039f\u03ba\u03c4': u'Oct',  # cfeaf4 in iso-8859-7
+   u'\u039d\u03bf\u03ad': u'Nov',  # cdefdd in iso-8859-7
+   u'\u039d\u03bf\u03b5': u'Nov',  # cdefe5 in iso-8859-7
+   u'\u0394\u03b5\u03ba': u'Dec',  # c4e5ea in iso-8859-7
   }
 
 _greek_wdays = \
@@ -3508,7 +3508,7 @@ def _parse_date_rfc822(dateString):
         return time.gmtime(rfc822.mktime_tz(tm))
 # rfc822.py defines several time zones, but we define some extra ones.
 # 'ET' is equivalent to 'EST', etc.
-_additional_timezones = {'AT': -400, 'ET': -500, 'CT': -600, 'MT': -700, 'PT': -800}
+_additional_timezones = {'AT':-400, 'ET':-500, 'CT':-600, 'MT':-700, 'PT':-800}
 rfc822._timezones.update(_additional_timezones)
 registerDateHandler(_parse_date_rfc822)
 
@@ -3754,7 +3754,7 @@ def _stripDoctype(data):
     '''
     start = re.search(_s2bytes('<\w'), data)
     start = start and start.start() or -1
-    head, data = data[:start + 1], data[start +1:]
+    head, data = data[:start + 1], data[start + 1:]
 
     entity_pattern = re.compile(_s2bytes(r'^\s*<!ENTITY([^>]*?)>'), re.MULTILINE)
     entity_results = entity_pattern.findall(head)

@@ -33,7 +33,7 @@ class HitsGroup(object):
         cls.last_id += 1
         return cls.last_id
 
-    def __init__(self, id= -1, key=None, simkey=None, prev_group=None):
+    def __init__(self, id=-1, key=None, simkey=None, prev_group=None):
         """
         Constructs a new HitsGroup object.
 

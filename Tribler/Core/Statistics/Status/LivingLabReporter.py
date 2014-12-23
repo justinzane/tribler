@@ -161,7 +161,7 @@ class LivingLabPeriodicReporter(Status.PeriodicStatusReporter):
         body = "\r\n".join(base)
 
         # Arno, 2010-03-09: Make proxy aware and use modern httplib classes
-        wanturl = 'http://' + self.host +self.path
+        wanturl = 'http://' + self.host + self.path
         proxyhost = find_proxy(wanturl)
         if proxyhost is None:
             desthost = self.host

@@ -22,7 +22,7 @@ def splitLine(line, COLS=80, indent=10):
             i = len(word)
             continue
         if i + len(word) >= width:
-            s.write('\n' + indent +word)
+            s.write('\n' + indent + word)
             i = len(word)
             continue
         s.write(' ' + word)
@@ -59,14 +59,14 @@ def defaultargs(options):
     return l
 
 
-def parseargs(argv, options, minargs=None, maxargs= None, presets = {}):
+def parseargs(argv, options, minargs=None, maxargs=None, presets={}):
     config = {}
     longkeyed = {}
     for option in options:
         longname, default, doc = option
         longkeyed[longname] = option
         config[longname] = default
-    for longname in presets.keys():        # presets after defaults but before arguments
+    for longname in presets.keys():  # presets after defaults but before arguments
         config[longname] = presets[longname]
     options = []
     args = []

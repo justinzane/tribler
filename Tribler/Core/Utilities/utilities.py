@@ -207,7 +207,7 @@ def isValidTorrentFile(metainfo):
 
 
 def isValidURL(url):
-    if url.lower().startswith('udp'):    # exception for udp
+    if url.lower().startswith('udp'):  # exception for udp
         url = url.lower().replace('udp', 'http', 1)
     r = urlparse.urlsplit(url)
     # if DEBUG:
@@ -253,7 +253,7 @@ def find_prog_in_PATH(prog):
 
 def get_collected_torrent_filename(infohash):
     # Arno: Better would have been the infohash in hex.
-    filename = sha(infohash).hexdigest() + '.torrent'    # notice: it's sha1-hash of infohash
+    filename = sha(infohash).hexdigest() + '.torrent'  # notice: it's sha1-hash of infohash
     return filename
     # exceptions will be handled by got_metadata()
 

@@ -74,7 +74,7 @@ class TestSeeding(TestAsServer):
 
     def seeder_state_callback(self, ds):
         d = ds.get_download()
-        print >> sys.stderr, "test: seeder:", repr(d.get_def().get_name()), dlstatus_strings[ds.get_status()],\
+        print >> sys.stderr, "test: seeder:", repr(d.get_def().get_name()), dlstatus_strings[ds.get_status()], \
             ds.get_progress()
 
         if ds.get_status() == DLSTATUS_SEEDING:
@@ -126,7 +126,7 @@ class TestSeeding(TestAsServer):
 
     def downloader_state_callback(self, ds):
         d = ds.get_download()
-        print >> sys.stderr, "test: download:", repr(d.get_def().get_name()), dlstatus_strings[ds.get_status()],\
+        print >> sys.stderr, "test: download:", repr(d.get_def().get_name()), dlstatus_strings[ds.get_status()], \
             ds.get_progress()
 
         if ds.get_status() == DLSTATUS_SEEDING:

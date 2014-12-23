@@ -76,13 +76,13 @@ class GuiImageManager(object):
         self._logger.debug(u"Start loading default images.")
 
         DEFAULT_IMAGE_INFO_LIST = [
-            ("PEER_THUMB",            u'defaultThumbPeer.png'),
-            ("TORRENT",               u'file_extension_tor.png'),
-            ("TORRENT_NEW",           u'file_extension_tornew.png'),
-            ("MODIFICATION",          u'edit_diff.png'),
+            ("PEER_THUMB", u'defaultThumbPeer.png'),
+            ("TORRENT", u'file_extension_tor.png'),
+            ("TORRENT_NEW", u'file_extension_tornew.png'),
+            ("MODIFICATION", u'edit_diff.png'),
             ("REVERTED_MODIFICATION", u'edit_reverted.png'),
-            ("COMMENT",               u'comments.png'),
-            ("MARKING",               u'marking.png'),
+            ("COMMENT", u'comments.png'),
+            ("MARKING", u'marking.png'),
         ]
         self._default_dict = {
             "PEER_THUMB": {},
@@ -149,7 +149,7 @@ class GuiImageManager(object):
 
                 # Size check for flag images.
                 if bitmap.GetWidth() != 16 or bitmap.GetHeight() != 11:
-                    msg = u"Country flag[%s] is of size [%dx%d], NOT [%dx%d]." %\
+                    msg = u"Country flag[%s] is of size [%dx%d], NOT [%dx%d]." % \
                           (flag, bitmap.GetWidth(), bitmap.GetHeight(), 16, 11)
                     self._logger.error(msg)
                     raise Exception(msg)

@@ -255,7 +255,7 @@ class RssParser(Thread):
                                               'description': description}
                                 if thumbnail_file:
                                     extra_info['thumbnail-file'] = thumbnail_file
-                                callback = lambda k = key, t=torrent, ei=extra_info: processCallbacks(k, t, ei)
+                                callback = lambda k = key, t = torrent, ei = extra_info: processCallbacks(k, t, ei)
                                 self.remote_th.save_torrent(torrent, callback)
 
                                 time.sleep(RSS_CHECK_FREQUENCY)

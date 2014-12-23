@@ -62,7 +62,7 @@ class MetadataInjector(object):
         self._logger.info(u"Starting session...")
         self.session = Session(sscfg)
         # add dispersy start callbacks
-        #self.session.add_observer(self.init_managers, NTFY_DISPERSY, [NTFY_STARTED])
+        # self.session.add_observer(self.init_managers, NTFY_DISPERSY, [NTFY_STARTED])
         self.session.add_observer(self.define_communities, NTFY_DISPERSY, [NTFY_STARTED])
         self.session.add_observer(self.dispersy_started, NTFY_DISPERSY, [NTFY_STARTED])
         self.session.start()
@@ -318,12 +318,12 @@ def print_communities(dispersy):
         )
 
     print >> sys.stderr, u"\n\n===== Dispersy Communities ====="
-    print >> sys.stderr, u"- %15s | %7s | %7s | %5s | %7s | %5s | %5s | %14s | %14s | %14s | %14s" %\
+    print >> sys.stderr, u"- %15s | %7s | %7s | %5s | %7s | %5s | %5s | %14s | %14s | %14s | %14s" % \
                          (u"Class", u"ID", u"Member", u"DB ID", u"GTime", u"Cands",
                           u"PK_cr", u"PK_sent", u"PK_recv", u"PK_succ", u"PK_drop")
 
     for community in community_list:
-        print >> sys.stderr, u"- %15s | %7s | %7s | %5s | %7s | %5s | %5s | %14s | %14s | %14s | %14s" %\
+        print >> sys.stderr, u"- %15s | %7s | %7s | %5s | %7s | %5s | %5s | %14s | %14s | %14s | %14s" % \
                              (community.classification.replace('Community', ''),
                               community.hex_cid[:7],
                               community.hex_mid[:7],

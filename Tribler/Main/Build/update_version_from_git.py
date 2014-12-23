@@ -8,7 +8,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-#We aren't using python-git because we don't want to install the dependency on all the builders.
+# We aren't using python-git because we don't want to install the dependency on all the builders.
 
 def runCommand(cmd):
     p = Popen(cmd, stdout=PIPE, stderr=PIPE)

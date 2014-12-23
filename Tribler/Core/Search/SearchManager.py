@@ -73,7 +73,7 @@ class SearchManager:
             return hits[:maxhits]
 
     def searchLibrary(self):
-        return self.dbhandler.getTorrents(sort="name", library= True)
+        return self.dbhandler.getTorrents(sort="name", library=True)
 
     def searchChannels(self, query):
         data = self.dbhandler.searchChannels(query)

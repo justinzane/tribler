@@ -208,7 +208,7 @@ class TorrentChecking(Thread):
 
         # get trackers from its .torrent file
         result = None
-        torrent = self._torrentdb.getTorrent(infohash,  ['torrent_file_name'], include_mypref=False)
+        torrent = self._torrentdb.getTorrent(infohash, ['torrent_file_name'], include_mypref=False)
         if torrent:
             if torrent.get('torrent_file_name', False) and os.path.isfile(torrent['torrent_file_name']):
                 result = torrent['torrent_file_name']
@@ -310,8 +310,8 @@ class TorrentChecking(Thread):
         else:
             self._pending_response_dict[infohash] = {'infohash': infohash,
                                                      'remainingResponses': 1,
-                                                     'seeders': -2,
-                                                     'leechers': -2,
+                                                     'seeders':-2,
+                                                     'leechers':-2,
                                                      'updated': False}
 
     def updateResultFromSession(self, infohash, seeders, leechers):

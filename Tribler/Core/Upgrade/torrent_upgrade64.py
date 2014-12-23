@@ -79,7 +79,7 @@ class TorrentMigrator64(object):
             try:
                 os.mkdir(self.tmp_migration_dir)
             except OSError as e:
-                msg = u"Failed to create temporary torrent collecting migration directory %s: %s" %\
+                msg = u"Failed to create temporary torrent collecting migration directory %s: %s" % \
                       (self.tmp_migration_dir, e)
                 raise OSError(msg)
         elif not os.path.isdir(self.tmp_migration_dir):

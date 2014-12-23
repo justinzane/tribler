@@ -121,7 +121,7 @@ class XmlPrinter:
                 if ns is not None:
                     if define_ns:
                         if ns_short:
-                            buffer += '<%s:%s xmlns:%s="%s"/>%s' %\
+                            buffer += '<%s:%s xmlns:%s="%s"/>%s' % \
                                       (ns_short, name, ns_short, ns, newl)
                         else:
                             buffer += '<%s xmlns="%s"/>%s' % (name, ns, newl)
@@ -150,7 +150,7 @@ class XmlPrinter:
                 if define_ns:
                     if ns_short:
                         # Define all namespaces of next level children too
-                        buffer += '<%s:%s xmlns:%s="%s"%s>%s' %\
+                        buffer += '<%s:%s xmlns:%s="%s"%s>%s' % \
                                   (ns_short, name, ns_short, ns, ns_string, newl)
                     else:
                         buffer += '<%s xmlns="%s"%s>%s' % (name, ns, ns_string, newl)

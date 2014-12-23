@@ -974,7 +974,7 @@ class ThumbnailListItemNoTorrent(FancyPanel, ListItem):
     def CreateBitmaps(self):
         # Temporary silence wx errors. Avoids "No handler found for image type" errors.
         nolog = wx.LogNull()
-        
+
         bitmap = None
 
         thumb_dir = os.path.join(self.guiutility.utility.session.get_torrent_collecting_dir(), binascii.hexlify(self.original_data.infohash))

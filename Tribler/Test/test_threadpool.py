@@ -40,7 +40,7 @@ class TestThreadPool(AbstractServer):
         print >> sys.stderr, "test_threadpool: Number of threads still running", len(ts)
         for t in ts:
             print >> sys.stderr, "test_threadpool: Thread still running", t.getName(), "daemon", t.isDaemon(), "instance:", t
-            
+
         AbstractServer.tearDown(self)
 
     def test_queueTask1(self):

@@ -276,7 +276,7 @@ class RemoteTorrentHandler(TaskManager):
                 failed += requester.requests_failed
             total_requests = pending_requests + success + failed
 
-            return "%s: %d/%d" % (qname, success, total_requests),\
+            return "%s: %d/%d" % (qname, success, total_requests), \
                    "%s: pending %d, success %d, failed %d, total %d" % (qname, pending_requests, success, failed, total_requests)
         return [(qstring, qtooltip) for qstring, qtooltip in [getQueueSuccess("TFTP", self.torrent_requesters),
                                                               getQueueSuccess("DHT", self.magnet_requesters),

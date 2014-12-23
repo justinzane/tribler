@@ -251,7 +251,7 @@ class RawServer(object):
         if self.errorfunc is None:
             print_exc()
         else:
-            if not kbint:   # don't report here if it's a keyboard interrupt
+            if not kbint:  # don't report here if it's a keyboard interrupt
                 self.errorfunc(e)
 
     def shutdown(self):

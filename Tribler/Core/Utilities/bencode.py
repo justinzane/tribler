@@ -41,7 +41,7 @@ def decode_string(x, f):
     if x[f] == '0' and colon != f + 1:
         raise ValueError
     colon += 1
-    return (x[colon:colon + n], colon +n)
+    return (x[colon:colon + n], colon + n)
 
 
 def decode_unicode(x, f):
@@ -103,7 +103,7 @@ def sloppy_bdecode(x):
         r, l = decode_func[x[0]](x, 0)
 #    except (IndexError, KeyError):
     except (IndexError, KeyError, ValueError):
-        #print_exc()
+        # print_exc()
         raise ValueError("bad bencoded data")
     return r, l
 
@@ -296,7 +296,7 @@ def encode_dict(x, r):
     ilist = x.items()
     ilist.sort()
     for k, v in ilist:
-        #logger.debug("bencode: Encoding %s %s", k, v)
+        # logger.debug("bencode: Encoding %s %s", k, v)
 
         try:
             r.extend((str(len(k)), ':', k))

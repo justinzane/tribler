@@ -47,7 +47,7 @@ class poll(object):
                 # on any file descriptors.
                 elist = Set(self.rlist)
                 elist = elist.union(self.wlist)
-                elist = list(elist)    # in Python2.3, elist must be a list type
+                elist = list(elist)  # in Python2.3, elist must be a list type
                 self._logger.debug("selectpoll: elist = %s", elist)
 
                 # print >>sys.stderr,"selectpoll: rlist",self.rlist,"wlist",self.wlist,"elist",elist

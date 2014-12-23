@@ -47,7 +47,7 @@ class Tunnel(object):
 
     __single = None
 
-    def __init__(self, settings, crawl_keypair_filename=None, dispersy_port= -1):
+    def __init__(self, settings, crawl_keypair_filename=None, dispersy_port=-1):
         if Tunnel.__single:
             raise RuntimeError("Tunnel is singleton")
         Tunnel.__single = self

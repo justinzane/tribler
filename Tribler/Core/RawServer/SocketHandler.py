@@ -26,7 +26,7 @@ except:
 all = POLLIN | POLLOUT
 
 if sys.platform == 'win32':
-    SOCKET_BLOCK_ERRORCODE = 10035    # WSAEWOULDBLOCK
+    SOCKET_BLOCK_ERRORCODE = 10035  # WSAEWOULDBLOCK
 else:
     SOCKET_BLOCK_ERRORCODE = errno.EWOULDBLOCK
 
@@ -229,7 +229,7 @@ class SingleSocket(object):
         else:
             self.socket_handler.poll.register(self.socket, POLLIN)
 
-    def set_handler(self, handler):    # can be: NewSocketHandler, Encoder, En_Connection
+    def set_handler(self, handler):  # can be: NewSocketHandler, Encoder, En_Connection
         self.handler = handler
 
 
@@ -314,7 +314,7 @@ class SocketHandler(object):
             raise socket.error('unable to open server port')
         self.port = port
 
-    def find_and_bind(self, first_try, minport, maxport, bind='', reuse= False, ipv6_socket_style=1,
+    def find_and_bind(self, first_try, minport, maxport, bind='', reuse=False, ipv6_socket_style=1,
                       randomizer=False, handler=None):
         e = 'maxport less than minport - no ports to check'
         if maxport - minport < 50 or not randomizer:
@@ -328,7 +328,7 @@ class SocketHandler(object):
                 listen_port = randrange(minport, maxport + 1)
                 if not listen_port in portrange:
                     portrange.append(listen_port)
-        if first_try != 0:    # try 22 first, because TU only opens port 22 for SSH...
+        if first_try != 0:  # try 22 first, because TU only opens port 22 for SSH...
             try:
                 self.bind(first_try, bind, reuse=reuse, ipv6_socket_style=ipv6_socket_style, handler=handler)
                 return first_try
@@ -383,7 +383,7 @@ class SocketHandler(object):
             self._logger.debug("SocketHandler: Exception in connect_ex %s", e)
             raise socket.error(str(e))
 
-        s = SingleSocket(self, sock, handler, dns[0])    # create socket to connect the peers obtained from tracker
+        s = SingleSocket(self, sock, handler, dns[0])  # create socket to connect the peers obtained from tracker
         self.single_sockets[sock.fileno()] = s
         self.poll.register(sock, POLLIN)
         # if DEBUG:
@@ -453,7 +453,7 @@ class SocketHandler(object):
     def handle_events(self, events):
         for sock, event in events:
             # print >>sys.stderr,"SocketHandler: event on sock#",sock
-            s, h = self.servers.get(sock, (None, None))    # socket.socket
+            s, h = self.servers.get(sock, (None, None))  # socket.socket
             if s:
                 if event & (POLLHUP | POLLERR) != 0:
                     self._logger.debug("SocketHandler: Got event, close server socket")
